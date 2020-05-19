@@ -1,7 +1,6 @@
 class DataItem extends HTMLElement{
     constructor(){
         super();
-        this.shadDOM = this.attachShadow({mode: "open"})
     }
 
     set data(meals){
@@ -10,7 +9,7 @@ class DataItem extends HTMLElement{
     }
 
     render(){
-        this.shadDOM.innerHTML=`
+        this.innerHTML=`
         <div class="card" style="width: 18rem;">
             <img src="${this._meal.strMealThumb}" class="card-img-top" alt="${this._meal.strMeal} image">
             <div class="card-body">

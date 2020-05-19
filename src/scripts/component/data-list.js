@@ -3,7 +3,6 @@ import "./data-item.js";
 class DataList extends HTMLElement{
     constructor(){
         super();
-        this.shadDOM = this.attachShadow({mode: "open"})
     }
 
     set data(meals){
@@ -12,16 +11,16 @@ class DataList extends HTMLElement{
     }
 
     errorState(pesan){
-        alert('Terjadi Kesalahan') = pesan;
+        pesan.alert('Terjadi Kesalahan');
     };
 
     render(){
-        const structure = this._data.forEach(data =>{
+        const structure = this._meal.forEach(data =>{
             const dataCreate = document.createElement("data-item");
-            dataCreate.data = data;
-            this.shadDOM.appendChild(dataCreate);
+            dataCreate.meals = data;
+            this.appendChild(dataCreate);
         });
-        this.shadDOM.innerHTML =`
+        this.innerHTML =`
         <div class="card-deck">
             ${structure}
         </div>`;

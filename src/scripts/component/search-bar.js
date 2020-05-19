@@ -1,7 +1,6 @@
-class SearchBar extends HTMLELement{
+class SearchBar extends HTMLElement{
     constructor(){
         super();
-        this.shadDOM = this.attachShadow({mode: "open"});
     }
 
     connectedCallback(){
@@ -14,11 +13,11 @@ class SearchBar extends HTMLELement{
     }
 
     get value(){
-        return this.shadDOM.querySelector("#input-data").value;
+        return this.querySelector("#input-data").value;
     }
 
     render(){
-        this.shadDOM.innerHTML =`
+        this.innerHTML =`
         <div class="input-group mb-3">
             <input type="text" class="form-control" placeholder="Cari masakkan apa nih?" id="input-data">
             <div class="input-group-append">
@@ -26,7 +25,7 @@ class SearchBar extends HTMLELement{
             </div>
         </div>`;
 
-        this.shadDOM.querySelector("#tombol-cari").addEventListener("click", this._clickEvent);
+        this.querySelector("#tombol-cari").addEventListener("click", this._clickEvent);
     }
 }
 
