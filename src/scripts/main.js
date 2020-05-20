@@ -6,18 +6,21 @@ const main = () =>{
     const searchBar = document.querySelector("search-bar");
     const dataList = document.querySelector("data-list");
 
-    const onClickButton = () =>{
-        DataControl.dataSearch(searchBar.value)
-        .then(hasilAkhir)
-        .catch(_errorState)
+    const onClickButton = async () =>{
+        try{
+            const nilaiHasil = await DataControl.dataSearch(searchBar.value);
+            hasilAkhir(nilaiHasil);
+        } catch(pesanError){
+            _errorState(pesanError);
+        }
     };
 
     const hasilAkhir = hasil =>{
         dataList.data = hasil;
     };
 
-    const _errorState = pesan =>{
-        dataList.errorState(pesan);
+    const _errorState = pesanError =>{
+        dataList.errorState(pesanError);
     };
 
     searchBar.clickEvent = onClickButton;

@@ -15,15 +15,12 @@ class DataList extends HTMLElement{
     };
 
     render(){
-        const structure = this._meal.forEach(data =>{
+        this.innerHTML =""
+        this._meal.forEach(data =>{
             const dataCreate = document.createElement("data-item");
-            dataCreate.meals = data;
-            this.appendChild(dataCreate);
+            dataCreate.data = data;
+            this.appendChild(dataCreate)
         });
-        this.innerHTML =`
-        <div class="card-deck">
-            ${structure}
-        </div>`;
     }
 }
 
