@@ -15,12 +15,11 @@ class DataList extends HTMLElement{
     };
 
     render(){
-        this.innerHTML =""
-        this._meal.forEach(data =>{
+        this._meal.forEach(datas =>{
             const dataCreate = document.createElement("data-item");
-            dataCreate.data = data;
+            dataCreate.data = datas;
             this.appendChild(dataCreate)
-        });
+        }); 
     }
 }
 
