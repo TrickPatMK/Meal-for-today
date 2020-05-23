@@ -10,16 +10,25 @@ class DataList extends HTMLElement{
         this.render();
     }
 
-    errorState(pesan){
-        pesan.alert('Terjadi Kesalahan');
+    errorState(pesan = "Terjadi Kesalahan"){
+        alert(pesan);
     };
 
     render(){
-        this._meal.forEach(datas =>{
+
+        this.innerHTML = `
+        <div class="card" id="data-list">
+            <div class="card-body">
+                <div class="card-deck"></div>
+            </div>
+        </div>`;
+
+        const output = this.querySelector(".card-deck");
+        Array.from(this._meal).forEach(datas =>{
             const dataCreate = document.createElement("data-item");
             dataCreate.data = datas;
-            this.appendChild(dataCreate)
-        }); 
+            output.appendChild(dataCreate)
+        })
     }
 }
 
