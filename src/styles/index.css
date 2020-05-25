@@ -1,3 +1,49 @@
+body{
+    background-image: url(https://images.pexels.com/photos/276514/pexels-photo-276514.jpeg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
 #data-list{
     margin-top: 10px;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.trans{
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+._toModal_layer{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    visibility: hidden;
+    display: flex;
+    opacity: 0;
+    align-items: center;
+    justify-content: center;
+    background-color:rgba(139, 139, 139, 0.4);
+    transition: opacity 0.2s, visibility 0.2s;
+}
+
+.col-md-4:hover ._toModal_layer{
+    visibility: visible;
+    opacity: 1;
+    transition: ease-in-out 0.4s;
+}
+
+._toModal{
+    transition: ease-in-out 0.4s;
+    transform: translateX(2em);
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.col-md-4:hover ._toModal{
+    transform: translateX(0);
+    text-decoration: none;
+    color: #ffffff;
 }

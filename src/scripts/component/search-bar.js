@@ -18,6 +18,11 @@ class SearchBar extends HTMLElement{
 
     render(){
         this.innerHTML =`
+        <style>
+        .input-group{
+            box-shadow: 0 6px 8px -6px black;
+        }
+        </style>
         <div class="input-group mb-3">
             <input type="text" class="form-control" placeholder="Cari masakkan apa nih?" id="input-data">
             <div class="input-group-append">
