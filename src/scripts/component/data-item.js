@@ -1,3 +1,5 @@
+//import $ from 'jquery';
+
 class DataItem extends HTMLElement{
     constructor(){
         super();
@@ -77,18 +79,18 @@ class DataItem extends HTMLElement{
                 </div>
             </div>
         </div>`;
-
+        //modal config
         const options = {
             'backdrop': 'true',
             'keyboard': 'true'
         };
-        const modal = document.querySelector("#myModal${this._meal.idMeal}");
+        /*const modal = this.querySelector("#myModal"+this._meal.idMeal);
         const trigg = document.querySelector("._toModal_layer");
 
-        $(modal).modal(options);
+        jQuery(modal).modal(options);
         $(modal).on('shown.bs.modal', function(){
             $(trigg).trigger('focus')
-        })
+        });*/
     }
 }
 

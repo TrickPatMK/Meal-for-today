@@ -5,6 +5,19 @@ body{
     background-repeat: no-repeat;
 }
 
+#jumbotron{
+    background-color: rgba(94, 94, 94, 0.4);
+    box-shadow: 0 8px 6px -4px black;
+    color: #ffffff;
+    font-size: 2em;
+    font-weight: bolder;
+}
+
+#jumbotron .container h1{
+    font-size: 2em;
+    font-weight: bolder;
+}
+
 #data-list{
     margin-top: 10px;
     background-color: rgba(255, 255, 255, 0.2);
