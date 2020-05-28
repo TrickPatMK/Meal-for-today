@@ -1,4 +1,4 @@
-//import $ from 'jquery';
+import $ from 'jquery';
 
 class DataItem extends HTMLElement{
     constructor(){
@@ -79,19 +79,19 @@ class DataItem extends HTMLElement{
                 </div>
             </div>
         </div>`;
-        //modal config
+        
         const options = {
             'backdrop': 'true',
             'keyboard': 'true'
         };
-        /*const modal = this.querySelector("#myModal"+this._meal.idMeal);
+        const myModal = document.querySelector("#myModal"+this._meal.idMeal);
         const trigg = document.querySelector("._toModal_layer");
 
-        jQuery(modal).modal(options);
-        $(modal).on('shown.bs.modal', function(){
+        $(myModal).modal(options);
+        $(myModal).on('shown.bs.modal', function(){
             $(trigg).trigger('focus')
-        });*/
+        });
     }
 }
 
-customElements.define("data-item", DataItem);
+customElements.define("data-item", DataItem);   
