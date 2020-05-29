@@ -54,7 +54,7 @@ class DataItem extends HTMLElement{
         }
         </style>
 
-        <div class="card mb-3" style="max-width: 515px;">
+        <div class="card mb-3" id="items" style="max-width: 515px;">
             <div class="row no-gutters">
                 <div class="col-md-4">
                     <img src="${this._meal.strMealThumb}" class="card-img" alt="${this._meal.strMeal} image">
@@ -71,15 +71,26 @@ class DataItem extends HTMLElement{
                 </div>
             </div>
         </div>
-        <div class="modal fade modal-lg" id="myModal${this._meal.idMeal}" tabindex="-1" role="dialog">
+        <div class="modal fade" id="myModal${this._meal.idMeal}" tabindex="-1" role="dialog" aria-labelledby="${this._meal.strMeal}Instruction" aria-hidden="true">
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
-                    <h4>${this._meal.strMeal}</h4>
-                    <p>${this._meal.strInstructions}</p>
+                    <div class="modal-header">
+                        <h4 class="modal-title">${this._meal.strMeal}</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <center><img src="${this._meal.strMealThumb}" width="200px" /></center>
+                        <h5 align="center">Instruction</h5>
+                        <p>${this._meal.strInstructions}</p>
+                    </div>
                 </div>
             </div>
         </div>`;
         
+        // Modal Part
+
         const options = {
             'backdrop': 'true',
             'keyboard': 'true'
@@ -89,9 +100,9 @@ class DataItem extends HTMLElement{
 
         $(myModal).modal(options);
         $(myModal).on('shown.bs.modal', function(){
-            $(trigg).trigger('focus')
+            $(trigg).trigger('focus');
         });
     }
 }
 
-customElements.define("data-item", DataItem);   
+customElements.define("data-item", DataItem);
